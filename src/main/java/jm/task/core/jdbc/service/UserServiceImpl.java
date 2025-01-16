@@ -4,14 +4,13 @@ import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private static UserDao userdao = new UserDaoJDBCImpl();
-    public UserDao getUserDaoJDBCImpl() {
-        return userdao;
-    }
-    public void createUsersTable() {
+    private UserDao userdao = new UserDaoJDBCImpl();
+
+    public void createUsersTable() throws SQLException {
         userdao.createUsersTable();
     }
 
@@ -19,7 +18,7 @@ public class UserServiceImpl implements UserService {
         userdao.dropUsersTable();
     }
 
-    public void saveUser(String name, String lastName, byte age) {
+    public void saveUser(String name, String lastName, byte age) throws SQLException {
         userdao.saveUser(name, lastName, age);
     }
 
