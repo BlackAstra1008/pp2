@@ -9,7 +9,7 @@ public class Util {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/firstdb";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "qwerty";
-    public Connection getConnection() {
+    public static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName(DB_DRIVER);
